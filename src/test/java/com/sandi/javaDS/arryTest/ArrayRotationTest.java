@@ -1,17 +1,9 @@
 package com.sandi.javaDS.arryTest;
 
-import com.sandi.javaDS.arry.ArrayRotation;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
 public class ArrayRotationTest{
-
-    @InjectMocks
-    ArrayRotation arrayRotation;
 
     public static int[] arry;
     public static int[] result;
@@ -22,8 +14,23 @@ public class ArrayRotationTest{
         arry = new int[]{1,2,3,4,5};
         result = new int[]{3,4,5,1,2};
         num = 2;
-        arrayRotation.LeftRotationByNumber(arry, num);
+        leftRotationByNumber(arry, num);
         Assert.assertArrayEquals(arry, result);
+    }
+
+    void leftRotationByNumber(int[] arry, int num){
+        int length = arry.length;
+        if(num > length)
+            num = length % num;
+        while(num > 0){
+            int i = 0;
+            int temp = arry[i];
+            for(i = 0; i < length-1;i++){
+                arry[i] = arry[i+1];
+            }
+            arry[i] = temp;
+            num--;
+        }
     }
 
 }

@@ -1,6 +1,8 @@
 package com.sandi.javaDS.tree;
 
-public class Treetraversals {
+import org.junit.Test;
+
+public class TraversalsTest {
 
     public void inOrder(Node root){
         if(root == null)
@@ -26,19 +28,34 @@ public class Treetraversals {
         System.out.print(root.data + " ");
     }
 
-    public static void main(String...args){
-        Treetraversals treetraversals = new Treetraversals();
+    @Test
+    void shouldTest(){
+        TraversalsTest traversalsTest = new TraversalsTest();
         Node node = new Node(1);
         node.left = new Node(2);
         node.right = new Node(3);
         node.left.left = new Node(4);
         node.left.right = new Node(5);
 
-        treetraversals.inOrder(node);
+        traversalsTest.inOrder(node);
         System.out.println("");
-        treetraversals.preOrder(node);
+        traversalsTest.preOrder(node);
         System.out.println("");
-        treetraversals.postOrder(node);
+        traversalsTest.postOrder(node);
+    }
+
+}
+
+class Node {
+
+    public int data;
+
+    public Node left;
+    public Node right;
+
+    public Node(int data){
+        this.data = data;
+        this.left = this.right = null;
     }
 
 }

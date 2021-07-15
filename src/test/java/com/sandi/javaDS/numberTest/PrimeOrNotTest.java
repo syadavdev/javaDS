@@ -1,30 +1,32 @@
 package com.sandi.javaDS.numberTest;
 
-import com.sandi.javaDS.number.PrimeOrNot;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
 public class PrimeOrNotTest {
 
-    @InjectMocks
-    PrimeOrNot primeOrNot;
-
     public static int num;
+
+    public boolean isPrime(int num){
+        int sqrt = (int)Math.sqrt(num);
+        while(sqrt > 1){
+            if(num % sqrt == 0)
+                return false;
+            sqrt--;
+        }
+        return true;
+    }
 
     @Test
     public void testPrimeOrNot(){
         num = 19;
-        Assert.assertEquals(primeOrNot.isPrime(num), true);
+        Assert.assertEquals(isPrime(num), true);
     }
 
     @Test
     public void testPrimeOrNot1(){
         num = 788;
-        Assert.assertEquals(primeOrNot.isPrime(num), false);
+        Assert.assertEquals(isPrime(num), false);
     }
 
 }

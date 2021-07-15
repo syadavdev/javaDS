@@ -1,0 +1,4 @@
+SupplierId, PriceListCode, Sku, SupplierSku
+1, APPLEPRICE, Iphone 12, APPLE
+2, SAMSUNGPRICE, galaxy note 8, SAMSUNG
+3, NOKIAPRICE, nokia 6.3, nokia
