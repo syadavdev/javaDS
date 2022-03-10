@@ -1,4 +1,4 @@
-package com.sandi.javaDS.numberTest;
+package com.sandi.javaDS.number;
 
 import org.junit.Assert;
 import org.junit.Test;

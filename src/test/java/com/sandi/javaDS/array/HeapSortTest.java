@@ -1,4 +1,4 @@
-package com.sandi.javaDS.arryTest;
+package com.sandi.javaDS.array;
 
 import org.junit.Assert;
 import org.junit.Test;
