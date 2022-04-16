@@ -16,32 +16,34 @@ public class HeapSortTest {
         Assert.assertArrayEquals(arry, result);
     }
 
-    void heapify(int[] arry,int n, int i) {
-        int largest = i;
-        int left = 2*i + 1;
-        int right = 2*i + 2;
-        if(left < n && arry[left] > arry[largest]){
+    public void heapify(int[] arry, int size, int index){
+        int left = index*2 + 1;
+        int right = index*2 + 2;
+        int largest = index;
+
+        if(left < size && arry[left] > arry[largest])
             largest = left;
-        }
-        if (right < n && arry[right] > arry[largest]){
+
+        if(right < size && arry[right] > arry[largest])
             largest = right;
-        }
-        if(largest != i) {
+
+        if(largest != index){
             int temp = arry[largest];
-            arry[largest] = arry[i];
-            arry[i] = temp;
-            heapify(arry,n, largest);
+            arry[largest] = arry[index];
+            arry[index] = temp;
+            heapify(arry, size, largest);
         }
+
     }
 
-    void heapSort(int arry[]) {
-        for(int i = (arry.length/2 - 1); i >= 0 ;i--){
-            heapify(arry, arry.length ,i);
-        }
-        for(int i = arry.length - 1;i >= 0;i--){
-            int temp = arry[0];
-            arry[0] = arry[i];
-            arry[i] = temp;
+    public void heapSort(int[] arry){
+        for(int i = (arry.length)/2 - 1; i >= 0; i--)
+            heapify(arry, arry.length, i);
+
+        for(int i = arry.length - 1; i > 0; i--){
+            int temp = arry[i];
+            arry[i] = arry[0];
+            arry[0] = temp;
             heapify(arry, i, 0);
         }
     }
