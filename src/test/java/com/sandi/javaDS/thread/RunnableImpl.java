@@ -1,4 +1,4 @@
-package com.sandi.javaDS.Thread;
+package com.sandi.javaDS.thread;
 
 import org.junit.Test;
 
