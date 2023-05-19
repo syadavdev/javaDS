@@ -1,10 +1,8 @@
 package com.sandi.javaDS.http;
 
-import com.sun.deploy.net.HttpRequest;
+/*import com.sun.deploy.net.HttpRequest;
 import com.sun.deploy.net.HttpResponse;
-import sun.net.www.http.HttpClient;
-
-import java.net.URI;
+import sun.net.www.http.HttpClient;*/
 
 public class HttpRequestTest {
 
