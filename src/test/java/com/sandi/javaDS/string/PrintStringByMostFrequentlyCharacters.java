@@ -1,10 +1,7 @@
 package com.sandi.javaDS.string;
 
-import javafx.util.Pair;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class PrintStringByMostFrequentlyCharacters {
